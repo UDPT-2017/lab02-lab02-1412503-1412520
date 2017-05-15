@@ -10,13 +10,21 @@ app.engine('hbs', exphbs({
 	extname: '.hbs',
 	defaultLayout: 'application',
 	layoutsDir: path.resolve('app/views/layouts'),
-    partialsDir: path.resolve('app/views/partials')};
+    partialsDir: path.resolve('app/views/partials')}));
 app.set('view engine', 'hbs');
 //vì sẽ không tìm đc file views ngay cùng thư mục, nên phải cấu hình lại địa chỉ của file views để render
-app.set('views', path.resolve('.app/views'));
+app.set('views', path.resolve('./app/views'));
+
+app.get('/home', function(req, res) {
+	res.render('home', {
+		user: {name: 'thikhin96', userID: 31},
+		unreadMail: 4
+	});
+})
 
 var port = 3000;
 
 app.listen(port, function(){
 	console.log('Connected!!');
 });
+
