@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Flat Login Form 3.0</title>
+
+  	<script src='components/jquery/dist/jquery.min.js'></script>
+
+	<link rel='stylesheet prefetch' href='components/font-awesome/css/font-awesome.css'>
+   	<link rel="stylesheet" href="css/styles.css">
+
+  	
+</head>
+
+<body>
+  
+<!-- Form Mixin-->
+<!-- Input Mixin-->
+<!-- Button Mixin-->
+<!-- Pen Title-->
+<div class="pen-title">
+  <h1>Login</h1>
+</div>
+<!-- Form Module-->
+<div class="module form-module">
+  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
+    <div class="tooltip">Don't have an account?</div>
+  </div>
+  <div class="form">
+    <h2>Login to your account</h2>
+    <form>
+      <input type="text" placeholder="Username"/>
+      <input type="password" placeholder="Password"/>
+      <button>Login</button>
+    </form>
+  </div>
+  <div class="form">
+    <h2>Create an account</h2>
+    <form>
+      <input type="text" placeholder="Username"/>
+      <input type="email" placeholder="Email Address"/>
+      <input type="password" placeholder="Password"/>
+      <input type="password" placeholder="Retype Password"/>
+      <input type="tel" placeholder="Phone Number"/>
+      <button>Register</button>
+    </form>
+  </div>
+  <div class="cta"><a href="http://andytran.me">Forgot your password?</a></div>
+</div>
+  
+
+
+    <script>
+    	// Toggle Function
+$('.toggle').click(function(){
+  // Switches the Icon
+  $(this).children('i').toggleClass('fa-pencil');
+  // Switches the forms  
+  $('.form').animate({
+    height: "toggle",
+    'padding-top': 'toggle',
+    'padding-bottom': 'toggle',
+    opacity: "toggle"
+  }, "slow");
+});
+    </script>
+
+</body>
+</html>
