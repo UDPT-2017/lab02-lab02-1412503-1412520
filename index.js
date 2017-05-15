@@ -9,8 +9,8 @@ app.use('/components', express.static('bower_components'));
 app.engine('hbs', exphbs({
 	extname: '.hbs',
 	defaultLayout: 'application',
-	layoutsDir:'server/views/layouts',
-    partialsDir:'server/views/partials'}));
+	layoutsDir: path.resolve('app/views/layouts'),
+    partialsDir: path.resolve('app/views/partials')};
 app.set('view engine', 'hbs');
 //vì sẽ không tìm đc file views ngay cùng thư mục, nên phải cấu hình lại địa chỉ của file views để render
 app.set('views', path.resolve('.app/views'));
