@@ -305,7 +305,7 @@ a:hover {
 }
 #menu li.active > a {
   background-color: #2b303a;
-  color: #ffffff;
+  color: #ff6961;
 }
 #menu ul li { background-color:#202121; }
 #menu ul {
@@ -425,8 +425,15 @@ a:hover {
 .logo-name a {
     display:inline-block;
 }
+
+.nav li.active > a{
+  color: #ff6961;
+  background: #DEDEDE !important;
+}
+
 .nav > li > a:hover, .nav > li > a:focus {
-    background: none !important;
+    color: #ff6961;
+    background: #DEDEDE !important;
 }
 span.logo-clr{
   color:#fdbb30;
@@ -580,8 +587,13 @@ ul.dropdown-menu li {
     color: #F2B33F;
 }
 li.active a i, .act a i {
-    color: #ff6961;
+    color: #ff6961 !important;
 }
+
+li a:hover i {
+  color: #ff6961 !important;
+}
+
 .custom-nav > li.act > a, .custom-nav > li.act > a:hover, .custom-nav > li.act > a:focus {
     background-color: #353f4f;
     color:#8BC34A;
@@ -2345,7 +2357,7 @@ table.table.tab-border {
     margin: 0em 1em;
 }
 .mail-profile {
-    background: #68AE00;
+    background: #2b303a !important;
     padding: 1em 1em;
 }
 .mail-profile {
@@ -2389,7 +2401,7 @@ table.table.tab-border {
 .compose-block a {
     font-size: 1em;
     color: #fff;
-    background:#68AE00;
+    background: #33b5e5;
     padding: 0.5em 1.5em;
     border-radius:3px;
     display: inline-block;
@@ -2441,7 +2453,7 @@ table.table.tab-border {
     color: #797878;
 }
 ul.nav.tabs li a span {
-    background: #DE3939;
+    background: #ff6961;
     border-radius: 15px;
     color: #fff;
     font-size: 0.9em;
