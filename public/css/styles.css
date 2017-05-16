@@ -929,7 +929,7 @@ ul.dropdown-menu {
 }
 .user-name{
    float:left;
-   margin-top:7px;
+   margin-top:16px;
    margin-left:11px;
    height:35px;
 }
@@ -949,6 +949,7 @@ ul.dropdown-menu {
     min-width: 190px;
     top: 122%;
     left:0%;
+    right: 0%;
 }
 ul.dropdown-menu.drp-mnu li {
     list-style-type: none;
@@ -2366,11 +2367,13 @@ table.table.tab-border {
     box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.15);
 }
 .mail-pic {
+    margin-top: 1em;
     float: left;
-    width: 30%;
+    width: 20%;
+    margin-left: 10%;
 }
 .mailer-name {
-    float: right;
+    float: left;
     width: 70%;
     margin-top: 1.4em;
 }

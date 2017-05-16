@@ -17,14 +17,14 @@ app.set('views', path.resolve('./app/views'));
 
 app.get('/home', function(req, res) {
 	res.render('home', {
-		user: {name: 'thikhin96', userID: 31},
+		user: {name: 'thikhin96', userID: 31, avatar: 'images/User.png'},
 		unreadMail: 4
 	});
 })
 
 app.get('/inbox', function(req, res) {
 	res.render('inbox', {
-		user: {name: 'thikhin96', userID: 31, email: 'thikhin96@yahoo.com'},
+		user: {name: 'thikhin96', userID: 31, email: 'thikhin96@yahoo.com', avatar: 'images/User.png'},
 		unreadMail: 4,
 		active_inbox: "active"
 	});
