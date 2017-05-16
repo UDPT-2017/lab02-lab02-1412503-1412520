@@ -387,14 +387,14 @@ a:hover {
     padding: 1em 2em;
     box-shadow: 0 1px 3px rgba(0,0,0,0.15);
 }
-@media (min-width: 1500px)
+@media (min-width: 992px)
 {
   .header-right {
     float: right;
-    width: 25%;
+    width: 30%;
   }
 }
-@media (max-width: 1501px)
+@media (max-width: 991px)
 {
 .header-right {
     float: right;

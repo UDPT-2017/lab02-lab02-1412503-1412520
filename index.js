@@ -22,6 +22,14 @@ app.get('/home', function(req, res) {
 	});
 })
 
+app.get('/inbox', function(req, res) {
+	res.render('inbox', {
+		user: {name: 'thikhin96', userID: 31, email: 'thikhin96@yahoo.com'},
+		unreadMail: 4
+	});
+})
+
+
 var port = 3000;
 
 app.listen(port, function(){
