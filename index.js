@@ -25,7 +25,8 @@ app.get('/home', function(req, res) {
 app.get('/inbox', function(req, res) {
 	res.render('inbox', {
 		user: {name: 'thikhin96', userID: 31, email: 'thikhin96@yahoo.com'},
-		unreadMail: 4
+		unreadMail: 4,
+		active_inbox: "active"
 	});
 })
 
