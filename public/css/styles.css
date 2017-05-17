@@ -4901,3 +4901,42 @@ ul.dropdown-menu {
     margin-right: 12px;
     color: #797878;
 }
+.profile_img img{
+  border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+.mail-pic img{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+tr.table-row:hover{
+  background:#FAFAFA;
+}
+
+tr.table-row {
+    border-top: 1px solid #F3F3F4;
+}
+
+td.table-text h6 {
+       font-size: 1.3em;
+    color: #333;
+}
+td.table-text p {
+    font-size: 0.9em;
+    line-height: 1.5em;
+        font-family: 'Roboto', sans-serif;
+    color: #999;
+}
+
+  td.table-img img {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+
+
+

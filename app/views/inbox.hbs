@@ -15,19 +15,19 @@
 	               </div>
 		</div>
 
-	    <table class="table tab-border display" id="tab">
+	    <table class="table tab-border display " id="inboxTable" cellspacing="0" width="100%">
 	    	<thead>
 	    		<tr>
-	                <th>Name</th>
-	                <th>Position</th>
-	                <th>Office</th>
+	                <th>Sender</th>
+	                <th>Content</th>
+	                <th>Time</th>
 	                <th>Age</th>
 	                <th>Start date</th>
 	                <th>Salary</th>
             	</tr>
 	    	</thead>
 	        <tbody>
-	                        <tr class="unread checked">
+	                        <tr class="table-row">
 	                            <td class="hidden-xs">
 	                                <input type="checkbox" class="checkbox">
 	                            </td>
@@ -427,8 +427,10 @@
 </div>
 <script type="text/javascript">
 	$(document).ready(function(){
-    $('#tab').DataTable({
-    	"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+    $('#inboxTable').DataTable({
+    	"lengthMenu": [[10, 12, 15, -1], [10, 12, 15, "All"]],
+    	"paging": true,
+    	"pagingType": "full_numbers"
     });
 });
 </script>
