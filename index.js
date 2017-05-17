@@ -38,6 +38,16 @@ app.get('/friends', function(req, res) {
 	});
 })
 
+
+app.get('/users', function(req, res) {
+	res.render('users', {
+		user: {name: 'thikhin96', userID: 31, email: 'thikhin96@yahoo.com', avatar: 'images/User.png'},
+		unreadMail: 4,
+		active_users: "active"
+	});
+})
+
+
 var port = 3000;
 
 app.listen(port, function(){
