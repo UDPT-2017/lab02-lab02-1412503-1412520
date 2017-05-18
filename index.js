@@ -10,7 +10,7 @@ app.engine('hbs', exphbs({
 	extname: '.hbs',
 	defaultLayout: 'application',
 	layoutsDir: path.resolve('app/views/layouts'),
-    partialsDir: path.resolve('app/views/partials')}));
+	partialsDir: path.resolve('app/views/partials')}));
 app.set('view engine', 'hbs');
 //vì sẽ không tìm đc file views ngay cùng thư mục, nên phải cấu hình lại địa chỉ của file views để render
 app.set('views', path.resolve('./app/views'));
@@ -37,10 +37,12 @@ app.get('/friends', function(req, res) {
 		active_friendList: "active"
 	});
 })
+var controllers = require('./app/controllers')
+app.get('/about', controllers.about.index);
+app.get('/new_mes', controllers.message.new_mes);
+app.get('/sent', controllers.message.sent);
 
 var port = 3000;
-
 app.listen(port, function(){
 	console.log('Connected!!');
 });
-
