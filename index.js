@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var exphbs = require('express-handlebars');
 var path = require('path');
+var controllers = require('./app/controllers');
 
 app.use(express.static('public'));
 app.use('/components', express.static('bower_components'));
@@ -15,38 +16,17 @@ app.set('view engine', 'hbs');
 //vì sẽ không tìm đc file views ngay cùng thư mục, nên phải cấu hình lại địa chỉ của file views để render
 app.set('views', path.resolve('./app/views'));
 
-app.get('/home', function(req, res) {
-	res.render('home', {
-		user: {name: 'thikhin96', userID: 31, avatar: 'images/User.png'},
-		unreadMail: 4
-	});
-})
+app.get('/home', controllers.home.index);
 
-app.get('/inbox', function(req, res) {
-	res.render('inbox', {
-		user: {name: 'thikhin96', userID: 31, email: 'thikhin96@yahoo.com', avatar: 'images/User.png'},
-		unreadMail: 4,
-		active_inbox: "active"
-	});
-})
+app.get('/inbox', controllers.inbox.index);
 
-app.get('/friends', function(req, res) {
-	res.render('friendList', {
-		user: {name: 'thikhin96', userID: 31, email: 'thikhin96@yahoo.com', avatar: 'images/User.png'},
-		unreadMail: 4,
-		active_friendList: "active"
-	});
-})
+app.get('login', controllers.logIn.index);
 
-app.get('/users', function(req, res) {
-	res.render('users', {
-		user: {name: 'thikhin96', userID: 31, email: 'thikhin96@yahoo.com', avatar: 'images/User.png'},
-		unreadMail: 4,
-		active_users: "active"
-	});
-})
+app.get('/friends', controllers.friend.index);
 
-var controllers = require('./app/controllers')
+
+app.get('/users', controllers.users.index);
+
 app.get('/about', controllers.about.index);
 app.get('/new_mes', controllers.message.new_mes);
 app.get('/sent', controllers.message.sent);
