@@ -2332,6 +2332,7 @@ canvas#pie {
     margin: 0% 5% 0% 0%;
 }
 .mailbox-content {
+    padding: 1em 1em;
     background: #fff;
     box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.15);
 }
@@ -3648,10 +3649,17 @@ div#geoChart {
     float: left;
     width: 33%;
     text-align: center;
+<<<<<<< HEAD
 }
+=======
+}
+
+
+
+>>>>>>> a208411df0746ca318a1b40052a6ad43fc25f824
 /*--logoname--*/
 .logo-name {
-    width: 39%;
+    width: 100%;
     margin: 0% 1% 0% 0%;
 }
 .search-box {
@@ -4938,6 +4946,7 @@ td.table-text p {
     -o-border-radius: 50%;
   }
 
+<<<<<<< HEAD
 /*///////////////////////////////////////////*/
   .member {
         border: 2px solid lightgray;
@@ -4975,3 +4984,7 @@ td.table-text p {
     min-height: 500px;
     border: 1.5px solid lightgray;
   }
+
+.table thead{
+  display: none;
+}

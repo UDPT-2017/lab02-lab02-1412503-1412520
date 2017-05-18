@@ -37,10 +37,20 @@ app.get('/friends', function(req, res) {
 		active_friendList: "active"
 	});
 })
+
+app.get('/users', function(req, res) {
+	res.render('users', {
+		user: {name: 'thikhin96', userID: 31, email: 'thikhin96@yahoo.com', avatar: 'images/User.png'},
+		unreadMail: 4,
+		active_users: "active"
+	});
+})
+
 var controllers = require('./app/controllers')
 app.get('/about', controllers.about.index);
 app.get('/new_mes', controllers.message.new_mes);
 app.get('/sent', controllers.message.sent);
+
 
 var port = 3000;
 app.listen(port, function(){
