@@ -1,0 +1,64 @@
+{{> user}}
+<div class="col-md-8 col-sm-12 col-xs-12 mailbox-content  tab-content tab-content-in">
+    <div class="tab-pane active text-style table-responsive " id="tab1">
+	 	<div class="mailbox-border">
+	               <div class="mail-toolbar clearfix">
+				    <div class="float-left">
+				        <div class="btn btn_1 btn-default mrg5R">
+				           <i class="fa fa-refresh"> </i>
+				        </div>
+				        <div class="clearfix"> </div>
+				    </div>
+				    <div class="float-right">
+	                       <div class="clearfix"> </div>
+	                 </div>
+	               </div>
+		</div>
+    <table id="sentTable" class=" table tab-border display" cellspacing="0" width="100%">
+      <thead id="th">
+          <tr>
+              <th>Receiver</th>
+              <th>Content</th>
+              <th>Sent</th>
+              <th>Seen</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr class="table-row">
+            <td class="hidden-xs">Google</td>
+            <td>Lorem Ipsum is simply</td>
+            <td>12 march</td>
+            <td>12 march</td>
+        </tr>
+        <tr class="table-row">
+            <td class="hidden-xs">Dropbox</td>
+            <td>Consectetuer adipiscing elit</td>
+            <td>02 march</td>
+            <td>11 march</td>
+        </tr>
+        <tr class="table-row">
+            <td class="hidden-xs">Adobe</td>
+            <td>Nemo enim ipsam voluptatem</td>
+            <td>8 march</td>
+            <td>1 march</td>
+        </tr>
+        <tr class="table-row">
+            <td class="hidden-xs">Apple</td>
+            <td>Hai Neha.How are You</td>
+            <td>4 march</td>
+            <td>2 march</td>
+        </tr>
+      </tbody>
+    </table>
+	</div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#sentTable').DataTable( {
+      "lengthMenu": [[10, 12, 15, -1], [10, 12, 15, "All"]],
+    	"paging": true,
+    	"pagingType": "full_numbers"
+    });
+} );
+</script>
