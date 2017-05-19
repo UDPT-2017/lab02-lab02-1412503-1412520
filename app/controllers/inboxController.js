@@ -5,6 +5,6 @@ var inboxController = {
 		unreadMail: 4,
 		active_inbox: "active"
 	});
-}
+}};
 
 module.exports = inboxController;

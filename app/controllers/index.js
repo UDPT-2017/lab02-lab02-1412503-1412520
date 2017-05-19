@@ -1,13 +1,15 @@
-var homeController = require('./app/controllers/homeController');
-var friendController = require('./app/controllers/friendController');
-var inboxController = require('./app/controllers/inboxController');
-var logInController = require('./app/controllers/logInController');
-var usersController = require('./app/controllers/usersController');
+var homeController = require('./homeController');
+var friendController = require('./friendController');
+var inboxController = require('./inboxController');
+var logInController = require('./logInController');
+var usersController = require('./usersController');
+var signUpController = require('./signUpController');
 
 module.exports = {
-	home: homeController;
-	friend: friendController;
-	inbox: inboxController;
-	logIn: logInController;
-	users: usersController;
+	home: homeController,
+	friend: friendController,
+	inbox: inboxController,
+	logIn: logInController,
+	users: usersController,
+	signUp: signUpController
 }

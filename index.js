@@ -3,9 +3,13 @@ var app = express();
 var exphbs = require('express-handlebars');
 var path = require('path');
 var controllers = require('./app/controllers');
+var bodyParser = require('body-parser');
 
 app.use(express.static('public'));
 app.use('/components', express.static('bower_components'));
+app.use(bodyParser.urlencoded({
+	extended: true
+}));
 
 app.engine('hbs', exphbs({
 	extname: '.hbs',
@@ -20,13 +24,15 @@ app.get('/home', controllers.home.index);
 
 app.get('/inbox', controllers.inbox.index);
 
-app.get('login', controllers.logIn.index);
+app.get('/login', controllers.logIn.index);
 
 app.get('/friends', controllers.friend.index);
 
-
 app.get('/users', controllers.users.index);
 
+app.post('/logIn', controllers.logIn.index);
+
+app.post('/signUp', controllers.signUp.index);
 
 var port = 3000;
 
