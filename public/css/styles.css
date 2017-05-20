@@ -987,7 +987,7 @@ ul.dropdown-menu.drp-mnu li {
 /*--header strip end here-*/
 /*inner-block--*/
 .inner-block {
-    padding: 4em 2em 4em 2em;
+    padding: 8em 2em 4em 2em;
     background: #fafafa;
 }
 .market-update-block {
@@ -4997,7 +4997,9 @@ td.table-text p {
     min-height: 500px;
     border: 1.5px solid lightgray;
   }
-
-/*.table thead{
+.inventory_related thead {
   display: none;
-}*/
+}
+.highlight {
+  background: #E6F1F5 !important;
+}

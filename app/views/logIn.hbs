@@ -31,10 +31,10 @@
   </div>
   <div class="form">
     <h2>Login to your account</h2>
-    <form method="post" action="/logIn">
-      <input type="text" placeholder="Username"/>
-      <input type="password" placeholder="Password"/>
-      <button type="submit">Sign in</button>
+    <form action="/logIn" id="logInForm">
+      <input type="email" placeholder="Email" name="email" id="email"/>
+      <input type="password" placeholder="Password" name="pass" id="pass"/>
+      <button type="submit" id="log-in">Sign in</button>
     </form>
   </div>
   <div class="form">
@@ -80,7 +80,7 @@ $('.toggle').click(function(){
     </script>
     <script src="js/bootstrapValidator.js"></script>
     <script src="js/signUp.js"></script>
-
+    <script src="js/logIn.js"></script>
 </body>
 
 </html>

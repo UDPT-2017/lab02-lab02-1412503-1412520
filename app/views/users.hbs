@@ -3,7 +3,7 @@
         		<div class="mailbox-content table-responsive col-12">
         			<div class="clearfix">
         			</div>
-                     <table class="table" id="usersTab">
+                     <table class="table inventory_related" id="usersTab">
                         <thead>
                             <th>Sender</th>
                             <th>Content</th>
@@ -13,13 +13,13 @@
                             {{#each users}}
                                 <tr class="table-row">
                                     <td class="table-img">
-                                       <img src="images/{{this.avatar}}" alt="" />
+                                       <img src="{{this.avatar}}" alt="" />
                                     </td>
                                     <td class="table-text">
                                     	<h6>{{this.name}}</h6>
                                         <p>{{this.email}}</p>
                                     </td>
-                                    {{#if isFriend}}
+                                    {{#if this.user2}}
                                     <td>
                                     	<button type="button" class="btn btn-danger">Unfriend</button>
                                     </td>

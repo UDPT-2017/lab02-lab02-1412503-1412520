@@ -15,7 +15,7 @@
 	               </div>
 		</div>
 
-	    <table class=" table tab-border display " id="inboxTable" cellspacing="0" width="100%">
+	    <table class=" table tab-border hover" id="inboxTable" cellspacing="0" width="100%">
 	    	<thead>
 	    		<tr>
 	                <th>Sender</th>
@@ -25,7 +25,20 @@
 	    	</thead>
 	        <tbody>
 	        {{#each messages}}
-	            <tr class="table-row">
+	        	{{#if this.readtime}}
+	        		 <tr class="table-row">
+		                <td>
+		                	{{this.sender}}
+		                </td>
+		                <td>
+		                    {{this.content}}
+		                </td>
+		                <td>
+		                    {{this.senttime}}
+		                </td>
+		            </tr>
+	        	{{else}}
+				 <tr class="table-row highlight">
 	                <td>
 	                	{{this.sender}}
 	                </td>
@@ -33,9 +46,10 @@
 	                    {{this.content}}
 	                </td>
 	                <td>
-	                    {{this.time}}
+	                    {{this.senttime}}
 	                </td>
 	            </tr>
+	            {{/if}}
 	        {{/each}}
 	        </tbody>
 	    </table>
