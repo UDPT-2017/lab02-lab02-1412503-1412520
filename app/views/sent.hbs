@@ -14,7 +14,7 @@
 	                 </div>
 	               </div>
 		</div>
-    <table id="sentTable" class=" table tab-border display" cellspacing="0" width="100%">
+    <table id="sentTable" class=" table tab-border display" cellspacing="0" width="100%" style="table-layout:fixed">
       <thead id="th">
           <tr>
               <th>Recipient</th>
@@ -25,17 +25,17 @@
       </thead>
       <tbody>
         {{#each sent_message}}
-          <tr class="table-row">
-              <td >
+          <tr class="table-row" >
+              <td style="overflow:hidden; white-space:nowrap; text-overflow: ellipsis;">
                 {{this.email}}
               </td>
-              <td>
+              <td style="overflow:hidden; white-space:nowrap; text-overflow: ellipsis;">
                   {{this.content}}
               </td>
-              <td >
+              <td style="overflow:hidden; white-space:nowrap; text-overflow: ellipsis;">
                   {{this.senttime}}
               </td>
-              <td>
+              <td style="overflow:hidden; white-space:nowrap; text-overflow: ellipsis;">
                   {{this.readtime}}
               </td>
           </tr>
