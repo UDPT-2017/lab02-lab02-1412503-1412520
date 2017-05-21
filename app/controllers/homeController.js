@@ -1,7 +1,7 @@
 var homeController = {
 	index: function(req, res) {
 	res.render('home', {
-		user: {name: 'thikhin96', userID: 31, avatar: 'images/User.png'},
+		user: req.user,
 		unreadMail: 4,
 		active_home: "active",
 	});

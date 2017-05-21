@@ -21,11 +21,15 @@
                                     </td>
                                     {{#if this.user2}}
                                     <td>
-                                    	<button type="button" class="btn btn-danger">Unfriend</button>
+                                        <form action="/unfriend">
+                                    	   <button type="button" class="btn btn-danger">Unfriend</button>
+                                        </form>
                                     </td>
                                     {{else}}
                                     <td>
-                                        <button type="button" class="btn btn-info">Add friend</button>
+                                        <form action="/addfriend">
+                                            <button type="button" class="btn btn-info">Add friend</button>
+                                        </form>
                                     </td>
                                     {{/if}}
 
