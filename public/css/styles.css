@@ -4935,7 +4935,7 @@ td.table-text h6 {
 td.table-text p {
     font-size: 0.9em;
     line-height: 1.5em;
-        font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: #999;
 }
 
@@ -4946,7 +4946,6 @@ td.table-text p {
     -o-border-radius: 50%;
   }
 
-<<<<<<< HEAD
 /*///////////////////////////////////////////*/
   .member {
         border: 2px solid lightgray;
@@ -4983,6 +4982,26 @@ td.table-text p {
     height: 100%;
     min-height: 500px;
     border: 1.5px solid lightgray;
+  }
+
+  .compose-right button[type="submit"] {
+      font-size: 0.9em;
+      background-color: #68AE00;
+      border:none;
+      color: #fff;
+      padding:0.8em 1.5em;
+      margin-top: 1em;
+          outline: none;
+  }
+  .compose-right button[type="submit"]:hover {
+    background-color: #FC8213;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+  }
+  .compose-right {
+      padding: 0px;
   }
 
 /*.table thead{

@@ -2,8 +2,11 @@ var express = require('express');
 var app = express();
 var exphbs = require('express-handlebars');
 var path = require('path');
+var bodyParser = require('body-parser')
 var controllers = require('./app/controllers');
 
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+// app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static('public'));
 app.use('/components', express.static('bower_components'));
 
@@ -28,9 +31,12 @@ app.get('/friends', controllers.friend.index);
 app.get('/users', controllers.users.index);
 
 app.get('/about', controllers.about.index);
+
 app.get('/new_mes', controllers.message.new_mes);
+
 app.get('/sent', controllers.message.sent);
 
+app.post('/new_mes', urlencodedParser, controllers.message.createMess);
 
 var port = 3000;
 app.listen(port, function(){

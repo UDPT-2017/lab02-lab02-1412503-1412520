@@ -4,9 +4,9 @@
 	 	<div class="mailbox-border">
 	               <div class="mail-toolbar clearfix">
 				    <div class="float-left">
-				        <div class="btn btn_1 btn-default mrg5R">
+				        <button class="btn btn_1 btn-default mrg5R">
 				           <i class="fa fa-refresh"> </i>
-				        </div>
+				        </button>
 				        <div class="clearfix"> </div>
 				    </div>
 				    <div class="float-right">
@@ -17,37 +17,29 @@
     <table id="sentTable" class=" table tab-border display" cellspacing="0" width="100%">
       <thead id="th">
           <tr>
-              <th>Receiver</th>
+              <th>Recipient</th>
               <th>Content</th>
               <th>Sent</th>
               <th>Seen</th>
           </tr>
       </thead>
       <tbody>
-        <tr class="table-row">
-            <td class="hidden-xs">Google</td>
-            <td>Lorem Ipsum is simply</td>
-            <td>12 march</td>
-            <td>12 march</td>
-        </tr>
-        <tr class="table-row">
-            <td class="hidden-xs">Dropbox</td>
-            <td>Consectetuer adipiscing elit</td>
-            <td>02 march</td>
-            <td>11 march</td>
-        </tr>
-        <tr class="table-row">
-            <td class="hidden-xs">Adobe</td>
-            <td>Nemo enim ipsam voluptatem</td>
-            <td>8 march</td>
-            <td>1 march</td>
-        </tr>
-        <tr class="table-row">
-            <td class="hidden-xs">Apple</td>
-            <td>Hai Neha.How are You</td>
-            <td>4 march</td>
-            <td>2 march</td>
-        </tr>
+        {{#each sent_message}}
+          <tr class="table-row">
+              <td >
+                {{this.email}}
+              </td>
+              <td>
+                  {{this.content}}
+              </td>
+              <td >
+                  {{this.senttime}}
+              </td>
+              <td>
+                  {{this.readtime}}
+              </td>
+          </tr>
+        {{/each}}
       </tbody>
     </table>
 	</div>
@@ -56,7 +48,7 @@
 <script type="text/javascript">
 $(document).ready(function() {
     $('#sentTable').DataTable( {
-      "lengthMenu": [[10, 12, 15, -1], [10, 12, 15, "All"]],
+      "lengthMenu": [[5,10 , 15,20, -1], [5, 10, 15,20, "All"]],
     	"paging": true,
     	"pagingType": "full_numbers"
     });
