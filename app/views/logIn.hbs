@@ -2,24 +2,27 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Flat Login Form 3.0</title>
+  <title>Log In</title>
 
   	<script src='components/jquery/dist/jquery.min.js'></script>
-
+    <script language="JavaScript" type="text/javascript" src="components/bootstrap/dist/js/bootstrap.js" charset="utf-8"></script>
 	<link rel='stylesheet prefetch' href='components/font-awesome/css/font-awesome.css'>
+  <link href="components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
    	<link rel="stylesheet" href="css/styles.css">
-
+    <link rel="stylesheet" href="css/bootstrapValidator.css">
+    <link href="components/sweetalert/dist/sweetalert.css" rel="stylesheet"> 
   	
+    <script src="components/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
-<body>
+<body bgcolor="#e9e9e9" class="logIn">
   
 <!-- Form Mixin-->
 <!-- Input Mixin-->
 <!-- Button Mixin-->
 <!-- Pen Title-->
 <div class="pen-title">
-  <h1>Login</h1>
+  <h1>Sign in</h1>
 </div>
 <!-- Form Module-->
 <div class="module form-module">
@@ -28,21 +31,36 @@
   </div>
   <div class="form">
     <h2>Login to your account</h2>
-    <form>
-      <input type="text" placeholder="Username"/>
-      <input type="password" placeholder="Password"/>
-      <button type="submit">Login</button>
+    <form action="/logIn" id="logInForm">
+      <input type="email" placeholder="Email" name="email" id="email"/>
+      <input type="password" placeholder="Password" name="pass" id="pass"/>
+      <button type="submit" id="log-in">Sign in</button>
     </form>
   </div>
   <div class="form">
     <h2>Create an account</h2>
-    <form>
-      <input type="text" placeholder="Username"/>
-      <input type="email" placeholder="Email Address"/>
-      <input type="password" placeholder="Password"/>
-      <input type="password" placeholder="Retype Password"/>
+    <form method="post" action="/signUp"  id="signUpForm">
+    <div class="form-group">
+      <input type="text" placeholder="Username" name="name"/>
+    </div>
+    <div class="form-group">
+      <input type="email" placeholder="Email Address" name="email"/>
+    </div>
+    <div class="form-group">
+      <input type="password" placeholder="Password" name="pass"/>
+    </div>
+    <div class="form-group">
+      <input type="password" placeholder="Retype Password" name="rePassword"/>
+    </div>
+    <div class="form-group">
       <input type="tel" placeholder="Phone Number"/>
-      <button type='submit'>Register</button>
+    </div>
+      
+      
+      <input type="hidden" id="err" value="1">
+      
+      <button type="submit">Register</button>
+    </div>
     </form>
   </div>
 </div>
@@ -60,6 +78,9 @@ $('.toggle').click(function(){
   }, "slow");
 });
     </script>
-
+    <script src="js/bootstrapValidator.js"></script>
+    <script src="js/signUp.js"></script>
+    <script src="js/logIn.js"></script>
 </body>
+
 </html>

@@ -18,11 +18,13 @@
   },
   "homepage": "https://github.com/UDPT-2017/lab02-lab02-1412503-1412520#readme",
   "dependencies": {
+    "ajax": "0.0.4",
     "body-parser": "^1.17.2",
     "bower": "^1.8.0",
     "express": "^4.15.2",
     "express-handlebars": "^3.0.0",
     "nodemon": "^1.11.0",
-    "pg": "^6.2.2"
+    "pg": "^6.2.2",
+    "pg-pool": "^1.7.1"
   }
 }

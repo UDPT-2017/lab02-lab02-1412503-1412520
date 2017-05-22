@@ -3,19 +3,17 @@
         		<div class="mailbox-content table-responsive">
         			<div class="clearfix">
         			</div>
-                     <table class="table" id="tab">
+                     <table class="table  inventory_related" id="tab">
                         <thead>
-                            <th>Sender</th>
-                            <th>Content</th>
-                            <th>Time</th>
-                            <th>Age</th>
-                            <th>Start date</th>
+                            <th>avatar</th>
+                            <th>name</th>
+                            <th>status</th>
                         </thead>
                         <tbody>
                             {{#each friend}}
                                 <tr class="table-row">
                                     <td class="table-img">
-                                       <img src="images/{{this.avatar}}" alt="" />
+                                       <img src="{{this.avatar}}" alt="" />
                                     </td>
                                     <td class="table-text">
                                     	<h6>{{this.name}}</h6>
