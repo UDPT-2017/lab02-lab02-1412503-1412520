@@ -1,15 +1,4 @@
-var pg = require('pg');
-
-var config = {
-  database: 'messageDB',
-  user: 'postgres',
-  password: '31101996',
-  port: 5432,
-  max: 10, //set pool max size to 20
-  idleTimeoutMillis: 1000 //close idle clients after 1 second
-};
-
-var pool = new pg.Pool(config);
+var pool = require('./connect');
 
 var User = {
 	getAllUser: function(userID, callback){
@@ -34,7 +23,7 @@ var User = {
 		});
 	},
 	getFriends: function(userID, callback){
-		pool.query('SELECT name, avatar, email FROM FRIENDLIST, USERS WHERE USER1 = $1::int AND USER2 = USERS.USERID', [userID], function(err, res){
+		pool.query('SELECT name, avatar, email, user2 FROM FRIENDLIST, USERS WHERE USER1 = $1::int AND USER2 = USERS.USERID', [userID], function(err, res){
 			if (err != null)
 				callback(err, null);
 			else
@@ -91,7 +80,17 @@ var User = {
 			}) );
 	},
 	unFriend: function(userID1, userID2, callback){
-		
+		pool.query("DELETE FROM FRIENDLIST WHERE user1 = $1::int AND user2 = $2::int", [userID1, userID2], pool.query("DELETE FROM FRIENDLIST WHERE user1 = $1::int AND user2 = $2::int", [userID2, userID1], 
+			function(err,res){
+				if (err != null){
+					console.log(err);
+					callback(err, null);
+				}
+				else {
+					callback(null, res.rows);
+			}
+			
+			}) );
 	}
 }
 

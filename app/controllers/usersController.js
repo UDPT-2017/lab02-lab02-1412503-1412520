@@ -34,6 +34,19 @@ var usersController = {
 				}
 			});
 			
+	},
+	unfriend: function(req, res){
+		console.log(req.body.friendID);
+		User.unFriend(req.user.userid, req.body.friendID, function(err, ress){
+				if (err !== null)
+				{
+					res.end('0');
+				}
+				else
+				{
+					res.end('1');
+				}
+			});
 	}
 }
 

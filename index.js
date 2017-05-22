@@ -58,8 +58,7 @@ app.get('/new_mes', controllers.message.new_mes);
 app.get('/sent', controllers.message.sent);
 
 app.post('/addfriend', controllers.users.addfriend);
-
-//add.get('/addfriend', controllers.users.addfriend);
+app.post('/unfriend', controllers.users.unfriend);
 
 
 

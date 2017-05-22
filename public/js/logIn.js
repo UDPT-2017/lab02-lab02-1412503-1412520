@@ -10,7 +10,6 @@ login = function(email, pass){
 		data: { em: email, password: pass},
 		url: '/logIn',
 		success: function(data){
-			alert(data);
 			window.location = data;
 		},
 		error: function(jqXHR, exception) {

@@ -44,19 +44,17 @@ swal({
 					data: {friendID: friendID},
 					url: '/unfriend',
 					success: function(data){
-						alert(data);
-						window.location = data;
+						if (data.localeCompare('1') === 0)
+							{
+								alert('You guys are no longer friends :(');
+							}
+						else
+						{
+							alert('There must be something wrong, please try again!!');
+						}
 					}
 				})
 
-			}
-			else
-			{
-				$.ajax({
-					type: 'POST',
-					data: {unfriend: 0},
-					url: '/unfriend'
-				})
 			}
 		});	
 }

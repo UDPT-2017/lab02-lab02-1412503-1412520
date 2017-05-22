@@ -15,7 +15,6 @@ document.getElementById('log-out').addEventListener('click', () => {
 					data: {logout: 1},
 					url: '/logOut',
 					success: function(data){
-						alert(data);
 						window.location = data;
 					}
 				})
