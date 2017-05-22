@@ -3,8 +3,8 @@
 **Name of your app** là một bài tập 2 tại môn UDPT. Ứng dụng cho phép người dùng gửi tin nhắn (email) cho người dùng khác.
 
 Thành viên:
-* [x] 1412503 Nguyễn Thị Thanh Thảo (tên tài khoản github)
-* [x] 1412520 Nguyễn Hoàng Thi (tên tài khoản github)
+* [x] 1412503 Nguyễn Thị Thanh Thảo (thaonguyen1096)
+* [x] 1412520 Nguyễn Hoàng Thi (thikhin96)
 
 URL: https://lab02-1412503-1412520.herokuapp.com/
 
