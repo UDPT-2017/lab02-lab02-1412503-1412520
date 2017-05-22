@@ -17,9 +17,9 @@ var messageController = {
           recipent: allFriend,
           active_messages: "active",
           active_new_mes: "active",
-            });
-          },req.user.userid)
-      }
+            }, req.user.userid);
+      } 
+    })
   },
   createMess: function(req, res){
       if (req.user == null)

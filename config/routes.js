@@ -1,5 +1,6 @@
-var controllers = require('../app/controllers');
 var bodyParser = require('body-parser');
+var controllers = require('../app/controllers');
+
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 module.exports = function(app) {

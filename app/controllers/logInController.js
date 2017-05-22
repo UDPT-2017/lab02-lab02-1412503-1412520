@@ -55,6 +55,7 @@ var logInController = {
 
 	authen: passport.authenticate('local-login'),
 	submit: function(req, res){
+        console.log(req.body);
 		if (req.user != null)
         {
             req.app.locals.user = req.user;

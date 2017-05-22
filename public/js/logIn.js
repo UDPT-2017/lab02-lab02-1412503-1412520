@@ -7,7 +7,9 @@ $('#log-in').click(function(){
 login = function(email, pass){
 	$.ajax({
 		type: 'POST',
-		data: { em: email, password: pass},
+        //contentType: "application/json",
+		//data: JSON.stringify( {"em": email, "password": pass}),
+        data: {"em": email, "password": pass},
 		url: '/logIn',
 		success: function(data){
 			window.location = data;
