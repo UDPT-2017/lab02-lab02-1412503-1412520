@@ -75,6 +75,7 @@ var messageController = {
     },userID)
   },
   sent: function(req, res){
+
     message.findAllMess(function(err, sent_message){
       res.render('sent', {
         user: {name: req.user.name, userID: req.user.userID, email: req.user.email, avatar: req.user.avatar},
@@ -85,6 +86,7 @@ var messageController = {
         active_sent: "active"
       });
     }, req.user.userID)
+
   }
 
 };

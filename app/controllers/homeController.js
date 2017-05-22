@@ -1,11 +1,19 @@
 var homeController = {
 	index: function(req, res) {
-	res.render('home', {
-		user: {name: req.user.name, userID: req.user.userID, email: req.user.email, avatar: req.user.avatar},
-		unreadMail: 4,
+
+	user = req.user;
+	if (user == null)
+	{
+		res.redirect('/login');
+	}else
+	{
+		res.render('home', {
+		user: req.user,
 		active_home: "active",
 	});
-}
+	}
+	}
+
 }
 
 module.exports = homeController;

@@ -20,7 +20,7 @@
                                         <p>{{this.email}}</p>
                                     </td>
                                     <td>
-                                    	<button type="button" class="btn btn-danger">Unfriend</button>
+                                    	<button type="button" class="btn btn-danger" onclick = "unFriend({{this.user2}})">Unfriend</button>
                                     </td>
                                 </tr>
                             {{/each}}
@@ -36,3 +36,4 @@
     });
 });
 </script>
+<script type="text/javascript" src="js/friend.js"></script>

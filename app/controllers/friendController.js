@@ -3,15 +3,21 @@ var User = require('../models/users.js')
 var friendsController = {
 	index: function(req, res) {
 
-	var friends = User.getFriends(1, function(err, friends){
+	user = req.user;
+	if (user == null)
+	{
+		res.redirect('/login');
+	}else
+	{
+	var friends = User.getFriends(user.userid, function(err, friends){
 		res.render('friendList', {
-		user: {name: 'thikhin96', userID: req.user, email: 'thikhin96@yahoo.com', avatar: 'images/User.png'},
-		unreadMail: 4,
+		user: user,
 		friend: friends,
 		active_friendList: "active"
 	});
 	})
 
+}
 
 }
 }

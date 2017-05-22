@@ -34,32 +34,29 @@
     <form action="/logIn" id="logInForm">
       <input type="email" placeholder="Email" name="email" id="email"/>
       <input type="password" placeholder="Password" name="pass" id="pass"/>
-      <button type="submit" id="log-in">Sign in</button>
+      <button type="button" id="log-in">Sign in</button>
+
     </form>
   </div>
   <div class="form">
     <h2>Create an account</h2>
     <form method="post" action="/signUp"  id="signUpForm">
     <div class="form-group">
-      <input type="text" placeholder="Username" name="name"/>
+      <input type="text" placeholder="Username" name="name" id="name"/>
     </div>
     <div class="form-group">
-      <input type="email" placeholder="Email Address" name="email"/>
+      <input type="email" placeholder="Email Address" name="email" id="em"/>
     </div>
     <div class="form-group">
-      <input type="password" placeholder="Password" name="pass"/>
+      <input type="password" placeholder="Password" name="pass" id="passw"/>
     </div>
     <div class="form-group">
       <input type="password" placeholder="Retype Password" name="rePassword"/>
     </div>
     <div class="form-group">
-      <input type="tel" placeholder="Phone Number"/>
-    </div>
-      
-      
-      <input type="hidden" id="err" value="1">
-      
-      <button type="submit">Register</button>
+      <input type="tel" placeholder="Phone Number" id="tel"/>
+    </div>      
+      <button type="submit" id="sign-up">Register</button>
     </div>
     </form>
   </div>

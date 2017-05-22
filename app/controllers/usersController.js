@@ -2,19 +2,53 @@ var User = require('../models/users.js')
 
 var usersController = {
 	index: function(req, res) {
-
-	User.getAllUser(1, function(err, user)
+	var user = req.user;
+	if (user == null)
+	{
+		res.redirect('/login');
+	}else
+	{
+		User.getAllUser(req.user.userid, function(err, users)
 		{
 			res.render('users', {
-				user: {name: 'thikhin96', userID: 31, email: 'thikhin96@yahoo.com', avatar: 'images/User.png'},
-				unreadMail: 4,
-				users: user,
+				user: req.user,
+				users: users,
 				active_users: "active"
 			});
 		}
-	);	
+
+		);
+	}
+		
 	
-}
+},
+	addfriend: function(req, res){
+			console.log(req.body.friendID);
+			User.addFriend(req.user.userid, req.body.friendID, function(err, ress){
+				if (err !== null)
+				{
+					res.end('0');
+				}
+				else
+				{
+					res.end('1');
+				}
+			});
+			
+	},
+	unfriend: function(req, res){
+		console.log(req.body.friendID);
+		User.unFriend(req.user.userid, req.body.friendID, function(err, ress){
+				if (err !== null)
+				{
+					res.end('0');
+				}
+				else
+				{
+					res.end('1');
+				}
+			});
+	}
 }
 
 module.exports = usersController;

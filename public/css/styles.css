@@ -5013,7 +5013,16 @@ td.table-text p {
       padding: 0px;
   }
 
-  /* The Modal (background) */
+
+.inventory_related thead {
+  display: none;
+}
+.highlight {
+  background: #E6F1F5 !important;
+}
+
+
+/* The Modal (background) */
   .modal {
       display: none; /* Hidden by default */
       position: fixed; /* Stay in place */
@@ -5068,8 +5077,6 @@ td.table-text p {
 
 .modal-header {
     padding: 2px 10px;
-    background-color: #3385ff;
-    color: white;
 }
 
 .modal-body {padding: 2px 16px;}
@@ -5077,13 +5084,5 @@ td.table-text p {
 .modal-footer {
     text-align: left !important;
     padding: 2px 10px;
-    background-color: #3385ff;
-    color: white;
 }
 
-.inventory_related thead {
-  display: none;
-}
-.highlight {
-  background: #E6F1F5 !important;
-}
