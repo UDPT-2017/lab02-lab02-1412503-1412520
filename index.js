@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
 
+
 app.use(express.static('public'));
 app.use('/components', express.static('bower_components'));
 app.use(bodyParser.json());
@@ -34,6 +35,8 @@ app.set('view engine', 'hbs');
 //vì sẽ không tìm đc file views ngay cùng thư mục, nên phải cấu hình lại địa chỉ của file views để render
 app.set('views', path.resolve('./app/views'));
 
+app.get('/', controllers.logIn.index);
+
 app.get('/home', controllers.home.index);
 
 app.get('/inbox', controllers.inbox.index);
@@ -53,6 +56,8 @@ app.post('/signUp', controllers.signUp.index);
 app.get('/about', controllers.about.index);
 app.get('/new_mes', controllers.message.new_mes);
 app.get('/sent', controllers.message.sent);
+
+app.post('/addfriend', controllers.users.addfriend);
 
 //add.get('/addfriend', controllers.users.addfriend);
 

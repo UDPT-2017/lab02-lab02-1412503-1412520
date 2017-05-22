@@ -13,7 +13,7 @@ var pool = new pg.Pool(config);
 
 var Message = {
 	getInbox: function(userID, callback){
-		pool.query('select content, name as sender, senttime, readtime from message, users where recipient = $1::int and users.userid = message.sender', [userID], function(err, res){
+		pool.query('select content, email as sender, senttime, readtime from message, users where recipient = $1::int and users.userid = message.sender', [userID], function(err, res){
 			if (err != null)
 				callback(err, null);
 			else

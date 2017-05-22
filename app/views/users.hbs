@@ -22,13 +22,13 @@
                                     {{#if this.user2}}
                                     <td>
                                         <form action="/unfriend">
-                                    	   <button type="button" class="btn btn-danger">Unfriend</button>
+                                    	   <button type="button" class="btn btn-danger" onclick = "unFriend({{this.user2}})">Unfriend</button>
                                         </form>
                                     </td>
                                     {{else}}
                                     <td>
                                         <form action="/addfriend">
-                                            <button type="button" class="btn btn-info">Add friend</button>
+                                            <button type="button" class="btn btn-info" onclick = "addFriend({{this.userid}})">Add friend</button>
                                         </form>
                                     </td>
                                     {{/if}}
@@ -47,3 +47,5 @@
     });
 });
 </script>
+
+<script type="text/javascript" src="js/friend.js"></script>

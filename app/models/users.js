@@ -51,6 +51,47 @@ var User = {
 				callback(null, res.rows);
 			}
 		});
+	},
+	checkUser: function(email, callback){
+		pool.query("SELECT * FROM USERS WHERE email = $1::text", [email], function(err, res){
+			if (err != null){
+				console.log(err);
+				callback(err, null);
+			}
+			else {
+				callback(null, res.rows);
+			}
+		});
+	},
+	addUser: function(pass, email, name, phone, callback){
+		var avatar = "images/User.png";
+		pool.query("INSERT INTO USERS VALUES(default, $1::text, $2::text, $3::text, $4::text, $5::text)", [pass, email, name, phone, avatar], 
+			function(err, res){
+			if (err != null){
+				console.log(err);
+				callback(err, null);
+			}
+			else {
+				callback(null, res.rows);
+			}
+		});
+	},
+	addFriend: function(userID1, userID2, callback){
+		console.log(userID2);
+		pool.query("INSERT INTO FRIENDLIST VALUES($1::int, $2::int)", [userID1, userID2], pool.query("INSERT INTO FRIENDLIST VALUES($1::int, $2::int)", [userID2, userID1], 
+			function(err,res){
+				if (err != null){
+					console.log(err);
+					callback(err, null);
+				}
+				else {
+					callback(null, res.rows);
+			}
+			
+			}) );
+	},
+	unFriend: function(userID1, userID2, callback){
+		
 	}
 }
 

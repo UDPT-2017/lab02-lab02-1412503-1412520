@@ -12,7 +12,6 @@ var messageController = {
     res.render('sent', {
       user: {name: 'thikhin96', userID: 31, email: 'thikhin96@yahoo.com', avatar: 'images/User.png'},
       title: 'Sent',
-      unreadMail: 4,
       active_messages: "active",
       active_sent: "active"
     });

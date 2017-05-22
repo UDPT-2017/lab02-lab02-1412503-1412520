@@ -55,13 +55,21 @@ var logInController = {
 	authen: passport.authenticate('local-login'),
 	submit: function(req, res){
 		if (req.user != null)
+        {
+            req.app.locals.user = req.user;
 			res.end('/inbox');
+        }
 		else
 			res.end('fail');
 	},
 	logOut: function(req, res){
-		req.logout();
-		console.log(req.user);
+        console.log(req.body);
+        if (req.body.logout == 1)
+        {
+            req.logout();
+            console.log(req.user);
+            res.end('/logIn');
+        }
 	}
 }
 
