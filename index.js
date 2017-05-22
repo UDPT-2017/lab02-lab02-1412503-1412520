@@ -2,15 +2,20 @@ var express = require('express');
 var app = express();
 var exphbs = require('express-handlebars');
 var path = require('path');
+var bodyParser = require('body-parser')
 var controllers = require('./app/controllers');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
 
 
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+// app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static('public'));
 app.use('/components', express.static('bower_components'));
+
 app.use(bodyParser.json());
+
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
@@ -20,6 +25,7 @@ app.engine('hbs', exphbs({
 	defaultLayout: 'application',
 	layoutsDir: path.resolve('app/views/layouts'),
 	partialsDir: path.resolve('app/views/partials'),
+
 	}));
 
 app.use(session({
@@ -29,6 +35,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 
 app.set('view engine', 'hbs');
@@ -54,8 +61,13 @@ app.post('/logOut', controllers.logIn.logOut);
 app.post('/signUp', controllers.signUp.index);
 
 app.get('/about', controllers.about.index);
+
 app.get('/new_mes', controllers.message.new_mes);
+
 app.get('/sent', controllers.message.sent);
+
+
+app.post('/new_mes', urlencodedParser, controllers.message.createMess);
 
 app.post('/addfriend', controllers.users.addfriend);
 app.post('/unfriend', controllers.users.unfriend);

@@ -2,6 +2,7 @@ var User = require('../models/users.js')
 
 var friendsController = {
 	index: function(req, res) {
+
 	user = req.user;
 	if (user == null)
 	{
@@ -17,6 +18,7 @@ var friendsController = {
 	})
 
 }
+
 }
 }
 

@@ -3656,20 +3656,16 @@ div#geoChart {
 .boost-icons-list ul li {
     font-size: 0.7em;
 }
-}
+
 @media (max-width:991px){
 .market-update-gd {
     float: left;
     width: 33%;
     text-align: center;
-<<<<<<< HEAD
-}
-=======
+  }
 }
 
 
-
->>>>>>> a208411df0746ca318a1b40052a6ad43fc25f824
 /*--logoname--*/
 .logo-name {
     width: 100%;
@@ -4948,7 +4944,7 @@ td.table-text h6 {
 td.table-text p {
     font-size: 0.9em;
     line-height: 1.5em;
-        font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: #999;
 }
 
@@ -4959,7 +4955,6 @@ td.table-text p {
     -o-border-radius: 50%;
   }
 
-<<<<<<< HEAD
 /*///////////////////////////////////////////*/
   .member {
         border: 2px solid lightgray;
@@ -4997,12 +4992,35 @@ td.table-text p {
     min-height: 500px;
     border: 1.5px solid lightgray;
   }
+
+  .compose-right button[type="submit"] {
+      font-size: 0.9em;
+      background-color: #68AE00;
+      border:none;
+      color: #fff;
+      padding:0.8em 1.5em;
+      margin-top: 1em;
+          outline: none;
+  }
+  .compose-right button[type="submit"]:hover {
+    background-color: #FC8213;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+  }
+  .compose-right {
+      padding: 0px;
+  }
+
+
 .inventory_related thead {
   display: none;
 }
 .highlight {
   background: #E6F1F5 !important;
 }
+
 
 /* The Modal (background) */
   .modal {
@@ -5067,3 +5085,4 @@ td.table-text p {
     text-align: left !important;
     padding: 2px 10px;
 }
+

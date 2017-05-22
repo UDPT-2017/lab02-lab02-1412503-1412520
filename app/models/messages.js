@@ -12,3 +12,4 @@ var Message = {
 }
 
 module.exports = Message;
+

@@ -1,5 +1,6 @@
 var homeController = {
 	index: function(req, res) {
+
 	user = req.user;
 	if (user == null)
 	{

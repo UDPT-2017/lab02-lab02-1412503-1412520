@@ -1,7 +1,7 @@
 var aboutController = {
   index: function(req, res){
     res.render('about', {
-      user: {name: 'thikhin96', userID: 31, email: 'thikhin96@yahoo.com', avatar: 'images/User.png'},
+      user: {name: req.user.name, userID: req.user.userID, email: req.user.email, avatar: req.user.avatar},
       title: 'About',
       active_about: "active"
     });

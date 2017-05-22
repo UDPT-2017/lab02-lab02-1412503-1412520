@@ -2,20 +2,21 @@ var User = require('../models/users.js')
 
 var usersController = {
 	index: function(req, res) {
-	user = req.user;
+	var user = req.user;
 	if (user == null)
 	{
 		res.redirect('/login');
 	}else
 	{
-		User.getAllUser(req.user.userid, function(err, user)
+		User.getAllUser(req.user.userid, function(err, users)
 		{
 			res.render('users', {
 				user: req.user,
-				users: user,
+				users: users,
 				active_users: "active"
 			});
 		}
+
 		);
 	}
 		

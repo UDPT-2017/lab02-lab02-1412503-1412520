@@ -44,14 +44,15 @@ passport.use('local-login', new LocalStrategy(
 ))
 
 
+
 var logInController = {
 	index: function(req, res) {
-		
-		
+
 		res.render('logIn', {
 			layout: false
 		});
 },
+
 	authen: passport.authenticate('local-login'),
 	submit: function(req, res){
 		if (req.user != null)

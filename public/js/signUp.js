@@ -1,4 +1,6 @@
+
     var error = true;
+
     $('#signUpForm').bootstrapValidator({
 //        live: 'disabled',
         message: 'This value is not valid',
@@ -58,6 +60,7 @@ $('#sign-up').click(function(){
     {
 
        swal({
+
             title: "Oops!!",
             text: "Are you sure your information meets our standard??",
             type: "error",
@@ -116,13 +119,7 @@ $('#sign-up').click(function(){
                         msg = 'Uncaught Error.\n' + jqXHR.responseText;
                     }
                     alert(msg);
-                     /*swal({
-                        title: "Oops!!",
-                        text: "Email has been used!!",
-                        type: "error",
-                        confirmButtonText: "Try again",
-                        confirmButtonColor: "#DD6B55"
-                    });*/
+
     }
 
             });
@@ -131,3 +128,4 @@ $('#sign-up').click(function(){
 
                    
 })
+

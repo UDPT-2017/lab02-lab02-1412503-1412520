@@ -1,5 +1,6 @@
 var pool = require('./connect');
 
+
 var User = {
 	getAllUser: function(userID, callback){
 		pool.query('select * from (select * from users u full outer join friendlist f on f.user2 = u.userid and f.user1 = $1::int) ulist where ulist.userid <> $1::int', [userID], function(err, res){
@@ -9,9 +10,6 @@ var User = {
 				callback(null, res.rows);
 		});
 	},
-	//loi o thang query nay thi fai k phai ba tai k co email trong database -_- naxy h muon noi ma co de noi dau co bat mic k vay @@
-	//nha co nguoi ngu roi
-	//ko bat duoc cho xiu them cai dong nay vao da @@
 	getUser: function(email, password, callback){
 		pool.query("SELECT * FROM USERS WHERE email = $1::text and pass = $2::text", [email, password], function(err, res){
 			if (err != null){
@@ -95,3 +93,4 @@ var User = {
 }
 
 module.exports = User;
+

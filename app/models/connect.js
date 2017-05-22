@@ -1,5 +1,4 @@
 var pg = require('pg');
-
 var config = {
   database: 'messageDB',
   user: 'postgres',
@@ -12,3 +11,4 @@ var config = {
 var pool = new pg.Pool(config);
 
 module.exports = pool;
+
