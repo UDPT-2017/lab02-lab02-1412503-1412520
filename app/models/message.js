@@ -3,13 +3,11 @@ var message = {
   findAllMess: function(callback, userID){
     setTimeout(function(){
       pool.query("select content, email, senttime, readtime from message, users where recipient = userID and sender = " + userID, function(err, result){
-        // console.log(JSON.stringify(result));
         callback(err, result.rows);
       });
     }, 5000);
   },
   createMess: function(callback, new_mes){
-    // console.log(new_mes);
     pool.query("select addMess ($1, $2, $3)",
     [new_mes.content, new_mes.sender, new_mes.recipent],
         function(err, result){

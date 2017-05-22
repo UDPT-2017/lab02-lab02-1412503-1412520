@@ -1,21 +1,6 @@
 var message = require('../models/message');
 
 var userID = 1;
-var check_message = function(email){
-  // message.getAllFriend(function(err, allFriend){
-  //   console.log(email);
-  //   console.log(allFriend);
-  //   for(var i=0;i<allFriend.length;i++){
-  //     if(allFriend[i].email === email){
-  //       console.log(allFriend[i].email);
-  //       return true;
-  //     }
-  //   }
-  //   return false;
-  // },userID)
-  return true;
-}
-
 
 var messageController = {
   new_mes: function(req, res){
@@ -32,55 +17,62 @@ var messageController = {
     },userID)
   },
   createMess: function(req, res){
-    // console.log(req.body);
-    console.log("kết quả: " + check_message(req.body.recipent));
-    if(check_message(req.body.recipent)){
-      message.createMess(function(err){
-        if(err){
-          console.log(err);
-          message.getAllFriend(function(err, allFriend){
-            res.render('new_mes', {
-              user: {name: 'thikhin96', userID: 31, email: 'thikhin96@yahoo.com', avatar: 'images/User.png'},
-              title: 'New Message',
-              message: 'Your email is not sent. Try again!!',
-              unreadMail: 4,
-              recipent: allFriend,
-              active_messages: "active",
-              active_new_mes: "active",
-            });
-          },userID)
+    var check = null;
+    message.getAllFriend(function(err, allFr){
+      for(var i=0;i<allFr.length;i++){
+        if(allFr[i].email === req.body.recipent){
+          check = allFr[i].email;
+          break;
         }
-        else{
-          message.getAllFriend(function(err, allFriend){
-            res.render('new_mes', {
-              user: {name: 'thikhin96', userID: 31, email: 'thikhin96@yahoo.com', avatar: 'images/User.png'},
-              title: 'New Message',
-              message: 'Your email is sent.',
-              unreadMail: 4,
-              recipent: allFriend,
-              active_messages: "active",
-              active_new_mes: "active",
-            });
-          },userID)
-        }
-      },{ content: req.body.content,
-          sender: userID,
-          recipent: req.body.recipent
-        } )
-    }
-    else{
-      message.getAllFriend(function(err, allFriend){
-        res.render('new_mes', {
-          user: {name: 'thikhin96', userID: 31, email: 'thikhin96@yahoo.com', avatar: 'images/User.png'},
-          title: 'New Message',
-          message: 'Your email is not sent. The recipent is not exit or not your friend. Try again!!',
-          unreadMail: 4,
-          recipent: allFriend,
-          active_messages: "active",
-          active_new_mes: "active",
-        });
-      },userID)
-    }
+      }
+      if(check!==null){
+        message.createMess(function(err){
+          if(err){
+            console.log(err);
+            message.getAllFriend(function(err, allFriend){
+              res.render('new_mes', {
+                user: {name: 'thikhin96', userID: 31, email: 'thikhin96@yahoo.com', avatar: 'images/User.png'},
+                title: 'New Message',
+                message: 'Your message is not sent. Try again!!',
+                unreadMail: 4,
+                recipent: allFriend,
+                active_messages: "active",
+                active_new_mes: "active",
+              });
+            },userID)
+          }
+          else{
+            message.getAllFriend(function(err, allFriend){
+              res.render('new_mes', {
+                user: {name: 'thikhin96', userID: 31, email: 'thikhin96@yahoo.com', avatar: 'images/User.png'},
+                title: 'New Message',
+                message: 'Your message is sent.',
+                unreadMail: 4,
+                recipent: allFriend,
+                active_messages: "active",
+                active_new_mes: "active",
+              });
+            },userID)
+          }
+        },{ content: req.body.content,
+            sender: userID,
+            recipent: req.body.recipent
+          } )
+      }
+      else{
+        message.getAllFriend(function(err, allFriend){
+          res.render('new_mes', {
+            user: {name: 'thikhin96', userID: 31, email: 'thikhin96@yahoo.com', avatar: 'images/User.png'},
+            title: 'New Message',
+            message: 'Your message is not sent. The recipent is not exit or not your friend. Try again!!',
+            unreadMail: 4,
+            recipent: allFriend,
+            active_messages: "active",
+            active_new_mes: "active",
+          });
+        },userID)
+      }
+    },userID)
   },
   sent: function(req, res){
     message.findAllMess(function(err, sent_message){

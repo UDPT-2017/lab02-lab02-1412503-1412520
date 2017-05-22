@@ -4,7 +4,7 @@
 	 	<div class="mailbox-border">
 	               <div class="mail-toolbar clearfix">
 				    <div class="float-left">
-				        <button class="btn btn_1 btn-default mrg5R">
+				        <button id = 'refresh' class="btn btn_1 btn-default mrg5R">
 				           <i class="fa fa-refresh"> </i>
 				        </button>
 				        <div class="clearfix"> </div>
@@ -25,23 +25,43 @@
       </thead>
       <tbody>
         {{#each sent_message}}
-          <tr class="table-row" >
-              <td style="overflow:hidden; white-space:nowrap; text-overflow: ellipsis;">
+          <tr class="table-row" id = "row" >
+              <td id ='e' title = "{{this.email}}" style="overflow:hidden; white-space:nowrap; text-overflow: ellipsis;">
                 {{this.email}}
               </td>
-              <td style="overflow:hidden; white-space:nowrap; text-overflow: ellipsis;">
+              <td id = 'c' title = "{{this.content}}" style="overflow:hidden; white-space:nowrap; text-overflow: ellipsis;">
                   {{this.content}}
               </td>
-              <td style="overflow:hidden; white-space:nowrap; text-overflow: ellipsis;">
+              <td id = 's' title = "{{this.senttime}}" style="overflow:hidden; white-space:nowrap; text-overflow: ellipsis;">
                   {{this.senttime}}
               </td>
-              <td style="overflow:hidden; white-space:nowrap; text-overflow: ellipsis;">
+              <td id = 'r' title = "{{this.readtime}}" style="overflow:hidden; white-space:nowrap; text-overflow: ellipsis;">
                   {{this.readtime}}
               </td>
           </tr>
         {{/each}}
       </tbody>
     </table>
+    <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h4 id ='recipent' ></h2>
+      </div>
+      <div class="modal-body">
+        <p id = 'content'></p>
+      </div>
+      <div class="modal-footer">
+        <h4 id = 'senttime'></h3>
+      </div>
+      <div class="modal-footer">
+        <h4 id = 'readtime'></h3>
+      </div>
+    </div>
+  </div>
+
 	</div>
 </div>
 
@@ -53,4 +73,54 @@ $(document).ready(function() {
     	"pagingType": "full_numbers"
     });
 } );
+
+// $(document).ready(function(){
+//     $("refresh").click(function(){
+//         $("div").load("sent.hbs",function(response, status){
+//             if (status == "success"){
+//                 $("div").html("<ol></ol>");
+//                 $(response).find("artist").each(function(){
+//                     var item_text = $(this).text();
+//                     $('<li></li>').html(item_text).appendTo('ol');
+//                 });
+//                 alert("There are " + $(response).find("cd").length + " CDs")
+//             }
+//         });
+//     });
+// });
+
+$(document).ready(function(){
+  $("tr.table-row").click(function() {
+      var tableData = $(this).children("td").map(function() {
+          return $(this).text();
+      }).get();
+      $("#recipent").text('Recipent: ' + $.trim(tableData[0]));
+      $("#content").text($.trim(tableData[1]));
+      $("#senttime").text('Senttime: ' + $.trim(tableData[2]));
+      $("#readtime").text('Readtime: ' + $.trim(tableData[3]));
+      modal.style.display = "block";
+      });
+});
+
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("row");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
 </script>
