@@ -1,12 +1,10 @@
 var pg = require('pg');
-var config = {
-  database: 'messageDB',
-  user: 'postgres',
-  password: '31101996',
-  port: 5432,
-  max: 10, //set pool max size to 20
-  idleTimeoutMillis: 1000 //close idle clients after 1 second
-};
+var config = require('../../config/database');
+var parse = require('pg-connection-string').parse;
+
+/*if (process.env.DATABASE_URL) {
+	config = parse(process.env.DATABASE_URL);
+}*/
 
 var pool = new pg.Pool(config);
 
