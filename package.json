@@ -4,7 +4,8 @@
   "description": "**Name of your app** là một bài tập 2 tại môn UDPT. Ứng dụng cho phép người dùng gửi tin nhắn (email) cho người dùng khác.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "install": "node_modules/.bin/bower install"
   },
   "repository": {
     "type": "git",
@@ -18,9 +19,17 @@
   },
   "homepage": "https://github.com/UDPT-2017/lab02-lab02-1412503-1412520#readme",
   "dependencies": {
+    "ajax": "0.0.4",
+    "body-parser": "^1.17.2",
     "bower": "^1.8.0",
     "express": "^4.15.2",
     "express-handlebars": "^3.0.0",
-    "nodemon": "^1.11.0"
+    "express-session": "^1.15.3",
+    "nodemon": "^1.11.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "pg": "^6.2.2",
+    "pg-connection-string": "^0.1.3",
+    "pg-pool": "^1.7.1"
   }
 }
